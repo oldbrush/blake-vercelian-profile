@@ -1,62 +1,33 @@
-// you can overwrite this entire file with your v0 Component.
-// just copy and paste the "React" output over the entire file.
+/**
+ * v0 by Vercel.
+ * @see https://v0.dev/t/oGGQSoSRNIQ
+ */
+import { Label } from "@/components/ui/label"
+import { Input } from "@/components/ui/input"
+import { Textarea } from "@/components/ui/textarea"
+import { Button } from "@/components/ui/button"
 
-import Link from "next/link";
-import React from "react";
-import {V0Logo} from "./symbols";
-
-function TestComponent() {
+export default function Component() {
   return (
-    <div
-      style={{
-        display: "flex",
-        height: "100%",
-        justifyContent: "space-between",
-        flexDirection: "column",
-        width: "100%",
-      }}
-    >
-      <h3
-        style={{
-          maxWidth: "11em",
-        }}
-      >
-        This would be a pretty good place for a{" "}
-        <Link href="https://v0.dev/" target="_blank" rel="noopener noreferrer">
-          v0 component
-        </Link>
-        , wouldn't it?
-      </h3>
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "space-between",
-          alignItems: "flex-end",
-          width: "100%",
-        }}
-      >
-        <p
-          style={{
-            maxWidth: "20em",
-          }}
-        >
-          Go make one, then paste it into{" "}
-          <code
-            style={{
-              fontFamily: "var(--font-geist-mono)",
-              fontWeight: 500,
-              fontSize: "0.95em",
-              fontFeatureSettings: "'ss09'",
-            }}
-          >
-            app/components/MyV0Component.tsx
-          </code>
-        </p>
-
-        <V0Logo />
+    <div className="w-full max-w-lg mx-auto bg-white dark:bg-zinc-800 rounded-lg shadow-md p-6 space-y-6">
+      <div className="space-y-2">
+        <h2 className="text-2xl font-bold text-center">Guestbook</h2>
+        <p className="text-zinc-500 dark:text-zinc-400 text-center">We would love to hear from you!</p>
+      </div>
+      <div className="space-y-4">
+        <div className="space-y-2">
+          <Label htmlFor="guest-name">Name</Label>
+          <Input id="guest-name" placeholder="Enter your name" required />
+        </div>
+        <div className="space-y-2">
+          <Label htmlFor="guest-message">Message</Label>
+          <Textarea className="min-h-[100px]" id="guest-message" placeholder="Enter your message" required />
+        </div>
+        <Button className="w-full" type="submit">
+          Submit
+        </Button>
       </div>
     </div>
-  );
+  )
 }
 
-export default TestComponent;
